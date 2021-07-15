@@ -1,7 +1,19 @@
-import react from 'react'
+import React, { Component } from 'react'
+import factory from '../ethereum/factory'
 
-const index = () => {
-   return <h1>Index page</h1>
+class CampaignIndex extends Component {
+   static async getInitialProps() {
+      const campaigns = await factory.methods.getDeployedCampaigns().call()
+      return { campaigns }
+   }
+
+   render() {
+      return (
+         <>
+            <h1>{this.props.campaigns[0]}</h1>
+         </>
+      )
+   }
 }
 
-export default index
+export default CampaignIndex
