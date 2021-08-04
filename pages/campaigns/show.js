@@ -65,7 +65,7 @@ class Show extends Component {
    render() {
       return (
          <Layout>
-            <h3>bruh</h3>
+            <h3>Campaign Summary</h3>
             <Grid>
                <Grid.Row>
                   <Grid.Column width={10}>{this.renderSummary()}</Grid.Column>
